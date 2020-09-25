@@ -87,15 +87,14 @@ namespace HarcosProjekt
 
         }
         public void Megkuzd(Harcos masikHarcos) {
-            Harcos egyikHarcos= new Harcos("Erős János", 1);
-            if (masikHarcos == egyikHarcos)
+            if (this.nev == masikHarcos.nev)
             {
                 Console.WriteLine("A két harcos ugyanaz, így nem lehetséges a megküzdésük");
                 Console.WriteLine("A program leáll");
                 Console.ReadKey();
 
             }
-            else if (masikHarcos.eletero == 0 || egyikHarcos.eletero == 0)
+            else if (masikHarcos.eletero == 0 || this.eletero == 0)
             {
                 Console.WriteLine("Egyik harcos életereje 0\nA program leáll");
                 Console.ReadKey();
@@ -103,26 +102,26 @@ namespace HarcosProjekt
             }
             else {
                 Console.WriteLine("A harc elkezdődött!");
-                masikHarcos.eletero -= egyikHarcos.Sebzes;
-                if (masikHarcos.eletero > 0 && egyikHarcos.eletero > 0)
+                masikHarcos.eletero -= this.Sebzes;
+                if (masikHarcos.eletero > 0 && this.eletero > 0)
                 {
-                    egyikHarcos.eletero -= masikHarcos.Sebzes;                
-                    egyikHarcos.Tapasztalat += 5;
+                    this.eletero -= masikHarcos.Sebzes;                
+                    this.Tapasztalat += 5;
                     masikHarcos.Tapasztalat += 5;
-                    Console.WriteLine(egyikHarcos.nev+ ": +5XP!");
+                    Console.WriteLine(this.nev+ ": +5XP!");
                     Console.WriteLine(masikHarcos.nev + ": +5XP!");
 
 
                 }
                 else if (masikHarcos.eletero == 0)
                 {
-                    egyikHarcos.Tapasztalat += 5;
-                    Console.WriteLine(egyikHarcos.nev+": +10XP!");
+                    this.Tapasztalat += 5;
+                    Console.WriteLine(this.nev+": +10XP!");
 
                 }
-                else if (egyikHarcos.eletero == 0) {
+                else if (this.eletero == 0) {
                     masikHarcos.Tapasztalat += 5;
-                    Console.WriteLine(egyikHarcos.nev + ": +10XP!");
+                    Console.WriteLine(this.nev + ": +10XP!");
 
 
                 }
