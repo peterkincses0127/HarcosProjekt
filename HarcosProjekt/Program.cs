@@ -63,7 +63,18 @@ namespace HarcosProjekt
 
                     }
                     foHarcos.Megkuzd(harcosLista[harcosValasztas]);
-               
+                    korIndex++;
+                    if (korIndex % 3 == 0)
+                    {
+                        harcosLista[rnd.Next(harcosLista.Count)].Megkuzd(foHarcos);
+                        for (int i = 0; i < harcosLista.Count; i++)
+                        {
+                            harcosLista[i].Gyogyul();
+                        }
+
+                    }
+                    Console.WriteLine(foHarcos);
+
 
                 }
 
