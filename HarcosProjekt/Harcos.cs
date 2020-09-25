@@ -43,7 +43,7 @@ namespace HarcosProjekt
                 
             }
         }
-        public int Eletero { get => eletero; set => eletero = value; }
+        public int Eletero { get => eletero; set => eletero = value; } //ellenőrzés
         public int AlapEletero { get => alapEletero;            }
         public int AlapSebzes { get => alapSebzes; set => alapSebzes = value; }
         public int Sebzes { get => alapSebzes + szint; }
