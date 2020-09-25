@@ -51,14 +51,17 @@ namespace HarcosProjekt
                 {
                     Console.Write("Hanyadik harcossal akar megküzdeni?: (1-3) ");
                     int harcosValasztas = Convert.ToInt32(Console.ReadLine());
+                    harcosValasztas--;
                     for (int i = 0; i < harcosLista.Count; i++)
                     {
                         Console.WriteLine("[" + (i + 1) + "] " + harcosLista[i]);
                     }
-                    while (harcosValasztas != 1 && harcosValasztas != 2 && harcosValasztas != 3)
+                    while (harcosValasztas != 0 && harcosValasztas != 1 && harcosValasztas != 2)
                     {
                         Console.Write("Nem jó számot adott meg, adja meg újra: ");
                         harcosValasztas = Convert.ToInt32(Console.ReadLine());
+                        harcosValasztas--;
+
 
 
                     }
@@ -75,7 +78,18 @@ namespace HarcosProjekt
                     }
                     Console.WriteLine(foHarcos);
 
+                    for (int i = 0; i < harcosLista.Count; i++)
+                    {
+                        Console.WriteLine("[" + (i + 1) + "] " + harcosLista[i]);
+                    }
 
+
+                }
+                if (menuPont == 'b')
+                {
+                    foHarcos.Gyogyul();
+                    Console.WriteLine("Gyógyítva!");
+                    Console.WriteLine("Életerő: "+ foHarcos.Eletero);
                 }
 
 
