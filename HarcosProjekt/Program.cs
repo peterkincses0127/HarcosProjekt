@@ -26,9 +26,27 @@ namespace HarcosProjekt
             harcosLista.Add(kihivo3);
             harcosLista.Add(kihivo4);
 
-            Console.WriteLine(kihivo2);
-            Console.WriteLine(kihivo3);
-            Console.WriteLine(kihivo4);
+            Console.WriteLine(foHarcos);
+            Console.WriteLine("Ellenségek\n--------------");
+
+            for (int i = 0; i < harcosLista.Count; i++)
+            {
+                Console.WriteLine("["+(i+1)+"] "+harcosLista[i]); 
+            }
+            Console.WriteLine("------------");
+            Console.WriteLine("Mit szeretne csinálni:\n\ta.) Megküzdeni egy harcossal" +
+                "\n\tb.) Gyógyitani\n\tc.)Kilépni");
+            char menuPont = Convert.ToChar(Console.ReadLine());
+            while (menuPont != 'a' && menuPont != 'b' && menuPont != 'c')
+            {
+                Console.Write("Nem jó adja meg újra: ");
+                menuPont = Convert.ToChar(Console.ReadLine());
+            }
+
+           
+
+
+
             
            //egyikHarcos.Megkuzd(new Harcos("Gyenge Gábor", 1));
         }
