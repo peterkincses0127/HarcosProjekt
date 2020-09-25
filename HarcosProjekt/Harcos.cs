@@ -97,5 +97,15 @@ namespace HarcosProjekt
 
             }
         }
+        public void Gyogyul()
+        {
+            if (Eletero == 0)
+            {
+                Eletero = MaxEletero;
+            }
+            else {
+                Eletero += 3 + Szint;
+            }
+        }
     }
 }
