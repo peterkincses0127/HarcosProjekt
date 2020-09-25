@@ -25,5 +25,29 @@ namespace HarcosProjekt
         public int Sebzes { get => alapSebzes + szint; }
         public int SzintLepeshez { get => 10 + szint * 5; }
         public int MaxEletero { get => alapEletero + szint * 3; }
+
+        public Harcos(string nev , int statuszSablon) {
+            this.nev = nev;
+            this.szint = 1;
+            this.tapasztalat = 0;
+            if (statuszSablon == 1)
+            {
+                this.alapEletero = 15;
+                this.alapSebzes = 3;
+            }
+            else if (statuszSablon == 2) {
+                this.alapEletero = 12;
+                this.alapSebzes = 4;
+            }
+            else if (statuszSablon == 3)
+            {
+                this.alapEletero = 8;
+                this.alapSebzes = 5;
+            }
+            this.eletero = alapEletero; 
+
+
+
+        }
     }
 }
