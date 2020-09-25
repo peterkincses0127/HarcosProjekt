@@ -17,43 +17,34 @@ namespace HarcosProjekt
 
 
         public string Nev { get => nev; set => nev = value; }
-        public int Szint { get => szint; set
+        public int Szint
+        {
+            get => szint; set
             {
-                szint = 1;
-                if (Tapasztalat == SzintLepeshez)
+                if (value == szint + 1 && Tapasztalat >= SzintLepeshez)
                 {
-                    Tapasztalat -= SzintLepeshez;
+                    tapasztalat -= SzintLepeshez;
                     szint++;
                     Eletero = MaxEletero;
-
                 }
-           szint = value; } }
+            }
+        }
         public int Tapasztalat
         {
             get => tapasztalat;
             set
             {
-                if (Tapasztalat == SzintLepeshez)
+                tapasztalat = value;
+
+                if (Tapasztalat >= SzintLepeshez)
                 {
                     szint++;
-                }
-                else
-                {
-                    tapasztalat = value;
-                }
+                }                            
+                
             }
         }
         public int Eletero { get => eletero; set => eletero = value; }
-        public int AlapEletero { get => alapEletero;
-            set {
-                if (eletero == 0)
-                {
-                    Tapasztalat = 0;
-
-                }
-                else { AlapEletero = value; }
-
-                } }
+        public int AlapEletero { get => alapEletero;            }
         public int AlapSebzes { get => alapSebzes; set => alapSebzes = value; }
         public int Sebzes { get => alapSebzes + szint; }
         public int SzintLepeshez { get => 10 + szint * 5; }
@@ -102,10 +93,10 @@ namespace HarcosProjekt
             }
             else {
                 Console.WriteLine("A harc elkezdődött!");
-                masikHarcos.eletero -= this.Sebzes;
+                masikHarcos.Eletero -= this.Sebzes;
                 if (masikHarcos.eletero > 0 && this.eletero > 0)
                 {
-                    this.eletero -= masikHarcos.Sebzes;                
+                    this.Eletero -= masikHarcos.Sebzes;                
                     this.Tapasztalat += 5;
                     masikHarcos.Tapasztalat += 5;
                     Console.WriteLine(this.nev+ ": +5XP!");
