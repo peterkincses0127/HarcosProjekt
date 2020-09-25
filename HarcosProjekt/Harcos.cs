@@ -46,7 +46,11 @@ namespace HarcosProjekt
             }
             this.eletero = alapEletero; 
 
-
+        }
+        public override string ToString()
+        {
+            
+            return ""+ nev+" -- LVL: "+ szint + " -- EXP: "+ tapasztalat/SzintLepeshez + " -- HP: "+ eletero/MaxEletero+ " -- DMG: "+ sebzes;
 
         }
     }
