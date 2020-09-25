@@ -49,9 +49,53 @@ namespace HarcosProjekt
         }
         public override string ToString()
         {
-            
-            return ""+ nev+" -- LVL: "+ szint + " -- EXP: "+ tapasztalat/SzintLepeshez + " -- HP: "+ eletero/MaxEletero+ " -- DMG: "+ sebzes;
+           
+            return ""+ nev+" -- LVL: "+ szint + " -- EXP: "+ tapasztalat/SzintLepeshez + " -- HP: "+ eletero/MaxEletero+ " -- DMG: "+ Sebzes;
 
+        }
+        public void Megkuzd(Harcos masikHarcos) {
+            Harcos egyikHarcos= new Harcos("Erős János", 1);
+            if (masikHarcos == egyikHarcos)
+            {
+                Console.WriteLine("A két harcos ugyanaz, így nem lehetséges a megküzdésük");
+                Console.WriteLine("A program leáll");
+                Console.ReadKey();
+
+            }
+            else if (masikHarcos.eletero == 0 || egyikHarcos.eletero == 0)
+            {
+                Console.WriteLine("Egyik harcos életereje 0\nA program leáll");
+                Console.ReadKey();
+
+            }
+            else {
+                Console.WriteLine("A harc elkezdődött!");
+                masikHarcos.eletero -= egyikHarcos.Sebzes;
+                if (masikHarcos.eletero > 0 && egyikHarcos.eletero > 0)
+                {
+                    egyikHarcos.eletero -= masikHarcos.Sebzes;                
+                    egyikHarcos.Tapasztalat += 5;
+                    masikHarcos.Tapasztalat += 5;
+                    Console.WriteLine(egyikHarcos.nev+ ": +5XP!");
+                    Console.WriteLine(masikHarcos.nev + ": +5XP!");
+
+
+                }
+                else if (masikHarcos.eletero == 0)
+                {
+                    egyikHarcos.Tapasztalat += 5;
+                    Console.WriteLine(egyikHarcos.nev+": +10XP!");
+
+                }
+                else if (egyikHarcos.eletero == 0) {
+                    masikHarcos.Tapasztalat += 5;
+                    Console.WriteLine(egyikHarcos.nev + ": +10XP!");
+
+
+                }
+
+
+            }
         }
     }
 }
