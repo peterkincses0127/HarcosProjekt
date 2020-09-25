@@ -77,13 +77,13 @@ namespace HarcosProjekt
                 this.alapEletero = 8;
                 this.alapSebzes = 5;
             }
-            this.eletero = alapEletero; 
+            this.eletero = MaxEletero; 
 
         }
         public override string ToString()
         {
            
-            return ""+ nev+" -- LVL: "+ szint + " -- EXP: "+ tapasztalat/SzintLepeshez + " -- HP: "+ eletero/MaxEletero+ " -- DMG: "+ Sebzes;
+            return ""+ nev+" -- LVL: "+ szint + " -- EXP: "+ tapasztalat+" / "+SzintLepeshez + " -- HP: "+ eletero+" / "+MaxEletero+ " -- DMG: "+ Sebzes;
 
         }
         public void Megkuzd(Harcos masikHarcos) {
